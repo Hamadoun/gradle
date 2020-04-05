@@ -26,6 +26,7 @@ import spock.lang.Unroll
 class ComponentAttributesDynamicVersionIntegrationTest extends AbstractModuleDependencyResolveTest {
 
     @Unroll("#outcome if component-level attribute is #requested")
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "component attributes are used to reject fixed version"() {
         given:
         repository {
