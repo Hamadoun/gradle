@@ -60,6 +60,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "#thing can be added using #notation notation"() {
         when:
         buildFile << """
@@ -116,6 +117,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "#thing can be added to a new variant"() {
         when:
         buildFile << """
@@ -178,6 +180,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "#thing can be added and configured using #notation notation"() {
         when:
         buildFile << """
@@ -235,6 +238,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
         "dependencies"           | "map"    | "group: 'org.test', name: 'moduleB', version: '1.0'"
     }
 
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "dependencies can be removed"() {
         given:
         repository {
@@ -278,6 +282,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
         }
     }
 
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "dependency constraints can be removed"() {
         given:
         repository {
@@ -331,6 +336,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "#thing modifications are visible in the next rule"() {
         when:
         buildFile << """
@@ -397,6 +403,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can set version on dependency using #keyword"() {
         given:
         repository {
@@ -456,6 +463,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
     }
 
     @RequiredFeature(feature = GradleMetadataResolveRunner.GRADLE_METADATA, value = "true")
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can set version on dependency constraint"() {
         given:
         repository {
@@ -509,7 +517,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
         }
     }
 
-
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "changing dependencies in one variant leaves other variants untouched"() {
         when:
         buildFile << """
@@ -547,6 +555,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
         }
     }
 
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can update all variants at once"() {
         when:
         buildFile << """
@@ -590,6 +599,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "#thing of transitive dependencies can be changed"() {
         given:
         repository {
@@ -661,6 +671,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
         "dependency constraints" | _
     }
 
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "attribute matching is used to select a variant of the dependency's target if the dependency was added by a rule"() {
         given:
         repository {
@@ -801,6 +812,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can make #thing strict"() {
         given:
         repository {
@@ -865,6 +877,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can add rejections to #thing"() {
         given:
         repository {
@@ -936,6 +949,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
         "dependency constraints" | true
     }
 
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "a rule can provide a custom selection reason thanks to dependency reason"() {
         given:
         repository {
@@ -989,6 +1003,7 @@ class DependencyMetadataRulesIntegrationTest extends AbstractModuleDependencyRes
 
     }
 
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "a rule can provide a custom selection reason thanks to dependency constraint reason"() {
         given:
         repository {
