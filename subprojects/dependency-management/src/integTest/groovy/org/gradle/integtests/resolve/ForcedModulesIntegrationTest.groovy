@@ -372,6 +372,7 @@ task checkDeps {
 
     @Issue("gradle/gradle#5364")
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     void "if one module is forced, all same versions should be forced (forced = #forced)"() {
         mavenRepo.module('org', 'foo', '1.0').publish()
         mavenRepo.module('org', 'foo', '1.1').publish()
