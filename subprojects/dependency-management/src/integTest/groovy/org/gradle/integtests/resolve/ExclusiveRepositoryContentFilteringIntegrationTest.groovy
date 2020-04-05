@@ -17,6 +17,7 @@
 package org.gradle.integtests.resolve
 
 import org.gradle.integtests.fixtures.AbstractHttpDependencyResolutionTest
+import org.gradle.integtests.fixtures.ToBeFixedForInstantExecution
 import org.gradle.integtests.fixtures.resolve.ResolveTestFixture
 import org.gradle.test.fixtures.HttpRepository
 import org.gradle.test.fixtures.maven.MavenFileRepository
@@ -39,6 +40,7 @@ class ExclusiveRepositoryContentFilteringIntegrationTest extends AbstractHttpDep
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can include a module from a repository using #notation (Maven 1st)"() {
         def foo = ivyHttpRepo.module('org', 'foo', '1.0').publish()
         def bar = mavenHttpRepo.module('other', 'bar', '2.0').publish()
@@ -89,6 +91,7 @@ class ExclusiveRepositoryContentFilteringIntegrationTest extends AbstractHttpDep
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can include a module from a repository using #notation and combine with local repository filter"() {
         def foo = ivyHttpRepo.module('org', 'foo', '1.0').publish()
         def barIvy = ivyHttpRepo.module('other', 'bar', '2.0')
@@ -146,6 +149,7 @@ class ExclusiveRepositoryContentFilteringIntegrationTest extends AbstractHttpDep
     }
 
     @Unroll
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can declare a group of repositories to search for artifacts exclusively using #notation"() {
         def foo = ivyHttpRepo.module('org', 'foo', '1.0').publish()
         def bar = mavenHttpRepo.module('other', 'bar', '2.0').publish()
@@ -208,6 +212,7 @@ class ExclusiveRepositoryContentFilteringIntegrationTest extends AbstractHttpDep
         ]
     }
 
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can reuse an existing repo"() {
         def foo = ivyHttpRepo.module('org', 'foo', '1.0').publish()
         def bar = mavenHttpRepo.module('other', 'bar', '2.0').publish()
