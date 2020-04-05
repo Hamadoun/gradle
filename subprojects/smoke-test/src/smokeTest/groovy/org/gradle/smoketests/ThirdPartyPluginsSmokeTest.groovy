@@ -436,7 +436,6 @@ class ThirdPartyPluginsSmokeTest extends AbstractSmokeTest {
     }
 
     @Issue("https://github.com/gradle/gradle/issues/9897")
-    @ToBeFixedForInstantExecution(because = "unsupported Configuration field")
     def 'errorprone plugin'() {
         given:
         buildFile << """
