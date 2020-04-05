@@ -164,7 +164,6 @@ class DependencyConstraintsIntegrationTest extends AbstractPolyglotIntegrationSp
      * Test demonstrates a bug in resolution of constraints, when real dependency is evicted via conflict resolution.
      */
     @Issue("gradle/gradle#4610")
-    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     void "dependency constraint should not preserve hard dependency for evicted dependency"() {
         given:
         // "org:foo:1.0" -> "org:baz:1.0" -> "org:baz-transitive:1.0"
