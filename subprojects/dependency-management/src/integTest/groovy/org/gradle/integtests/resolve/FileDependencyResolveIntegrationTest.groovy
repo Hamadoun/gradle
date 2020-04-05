@@ -119,7 +119,6 @@ class FileDependencyResolveIntegrationTest extends AbstractDependencyResolutionT
         }
     }
 
-    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "files are requested once only when dependency is resolved"() {
         buildFile << '''
             def jarFile = file("jar-1.jar")
