@@ -70,7 +70,6 @@ class ProjectDependenciesAttributesIntegrationTest extends AbstractIntegrationSp
         color << ['blue', 'red']
     }
 
-    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "Fails with reasonable error message when no target variant can be found"() {
         given:
         settingsFile << "include 'dep'"
