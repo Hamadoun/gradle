@@ -16,6 +16,7 @@
 
 package org.gradle.integtests.resolve.rocache
 
+import org.gradle.integtests.fixtures.ToBeFixedForInstantExecution
 import org.gradle.test.fixtures.server.http.MavenHttpModule
 import org.gradle.test.fixtures.server.http.MavenHttpRepository
 
@@ -30,6 +31,7 @@ class NonUniqueSnapshotVersionsReadOnlyCacheDependencyResolutionTest extends Abs
         ]
     }
 
+    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "latest version is fetched from writable cache"() {
         given:
         def latest = snapshot.publishWithChangedContent()
