@@ -258,7 +258,6 @@ Required by:
     }
 
     @Unroll
-    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "uses '#rule' rule to reject candidate for static version #selector"() {
         given:
         Assume.assumeTrue isWellBehaved(mavenCompatible, gradleCompatible)
@@ -313,7 +312,6 @@ Required by:
     }
 
     @Unroll
-    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can use component selection rule to choose component from different repository for #selector"() {
         def ivyRepo2 = ivyRepo("repo2")
         def module2 = ivyRepo2.module("org.utils", "api", "1.1").withBranch("other").publishWithChangedContent()
