@@ -319,7 +319,6 @@ class RepositoryContentFilteringIntegrationTest extends AbstractHttpDependencyRe
     }
 
     @Unroll
-    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "two configurations can use the same repositories with filtering and do not interfere with each other"() {
         def mod = mavenHttpRepo.module('org', 'foo', '1.0').publish()
 
