@@ -42,7 +42,6 @@ class JavaLibraryCrossProjectTargetJvmVersionIntegrationTest extends AbstractInt
         resolve.prepare()
     }
 
-    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "can fail resolution if producer doesn't have appropriate target version"() {
         file('producer/build.gradle') << """
             java {
