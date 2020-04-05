@@ -362,7 +362,10 @@ class VariantAttributesRulesIntegrationTest extends AbstractModuleDependencyReso
     }
 
     @Unroll
-    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
+    @ToBeFixedForInstantExecution(
+        because = "Task with Configuration field in ResolveTestFixture",
+        iterationMatchers = ".*with Gradle metadata.*"
+    )
     def "can disambiguate variants to select #selectedVariant"() {
         given:
         withDefaultVariantToTest()
