@@ -129,7 +129,6 @@ class StaticVersionsReadOnlyCacheDependencyResolutionTest extends AbstractReadOn
         ]
     }
 
-    @ToBeFixedForInstantExecution(because = "Task with Configuration field in ResolveTestFixture")
     def "fetches javadocs and sources from read-only cache"() {
         given:
         buildFile << """
