@@ -115,6 +115,7 @@ public class DefaultConfigurableFileCollection extends CompositeFileCollection i
     public void disallowUnsafeRead() {
         disallowUnsafeRead = true;
         finalizeValueOnRead();
+        throw new UnsupportedOperationException();
     }
 
     public int getFactoryId() {
