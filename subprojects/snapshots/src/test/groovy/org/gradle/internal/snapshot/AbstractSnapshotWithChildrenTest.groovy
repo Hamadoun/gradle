@@ -32,7 +32,7 @@ abstract class AbstractSnapshotWithChildrenTest<NODE extends FileSystemNode, CHI
     List<FileSystemNode> removedSnapshots = []
     List<FileSystemNode> addedSnapshots = []
 
-    SnapshotHierarchy.DiffListener changeListener = new SnapshotHierarchy.DiffListener() {
+    SnapshotHierarchy.NodeDiffListener changeListener = new SnapshotHierarchy.NodeDiffListener() {
         @Override
         void nodeRemoved(FileSystemNode node) {
             removedSnapshots.add(node)
